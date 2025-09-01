@@ -1,3 +1,3 @@
-module github.com/hassanAarish/first-go-basic
+module github.com/hassanAarish/investment-calculator
 
 go 1.25.0
