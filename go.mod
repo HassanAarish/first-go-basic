@@ -1,3 +1,3 @@
-module github.com/hassanAarish/investment-calculator
+module github.com/hassanAarish/profit-calculator
 
 go 1.25.0
