@@ -15,11 +15,15 @@ func main() {
 	// expectedReturnRate :=10.00
 	// noOfYears:= 5.5
 
-	var investmentAmount float64 = 1000
-	var expectedReturnRate  float64 =10
-	var noOfYears float64 = 5.5
+	// var investmentAmount float64 = 1000
+	// var expectedReturnRate  float64 =10
+	// var noOfYears float64 = 5.5
 
-	var futureValue = investmentAmount * math.Pow(1 + expectedReturnRate/100,noOfYears)
+	var investmentAmount float64 = 1000
+	expectedReturnRate :=10.00
+	noOfYears:= 5.5
+
+	futureValue := investmentAmount * math.Pow(1 + expectedReturnRate/100,noOfYears)
 
 	fmt.Println("Future Value ===>", futureValue)
 
