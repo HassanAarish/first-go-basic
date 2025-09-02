@@ -22,12 +22,19 @@ func main() {
 	fmt.Print("Please enter the no. of years you to wish invest for ==> ")
 	fmt.Scan(&noOfYears)
 
-	futureValue := investmentAmount * math.Pow(1 + expectedReturnRate/100,noOfYears)
+	futureValue := investmentAmount * math.Pow(1+expectedReturnRate/100, noOfYears)
 	futureRealValue := futureValue / math.Pow(1+inflationRate/100, noOfYears)
 
-	fmt.Println("Future Value ===>", futureValue)
+	formattedFV := fmt.Sprintf("Future Value: %.2f\n", futureValue)
+	formattedRFV := fmt.Sprintf("Future Real Value: %.2f\n", futureRealValue)
 
-	fmt.Println("Future Real Value ===>", futureRealValue)
+	fmt.Print(formattedFV, formattedRFV)
+
+	// fmt.Printf("Future Value: %.2f\nFuture Real Value: %.2f\n", futureValue, futureRealValue)
+
+	// fmt.Println("Future Value ===>", futureValue)
+
+	// fmt.Println("Future Real Value ===>", futureRealValue)
 
 	fmt.Print("Program ended successfully !")
 }
