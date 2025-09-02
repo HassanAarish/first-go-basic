@@ -31,6 +31,8 @@ func main() {
 	fmt.Print(formattedFV, formattedRFV)
 
 	// fmt.Printf("Future Value: %.2f\nFuture Real Value: %.2f\n", futureValue, futureRealValue)
+	// fmt.Printf(`Future Value: %.2f
+	// Future Real Value: %.2f`, futureValue, futureRealValue)
 
 	// fmt.Println("Future Value ===>", futureValue)
 
