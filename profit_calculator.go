@@ -7,28 +7,47 @@ import (
 func main() {
 	fmt.Println(".... ===> Your Profit Calculator <=== ....")
 
-	var revenue float64
-	var expenses float64
-	var taxRate float64
+	// var revenue float64
+	// var expenses float64
+	// var taxRate float64
 
-	fmt.Print("Revenue: ")
-	fmt.Scan(&revenue)
+	revenue := getUserInput("Revenue: ")
+	// fmt.Print("Revenue: ")
+	// fmt.Scan(&revenue)
 
-	fmt.Print("Expenses: ")
-	fmt.Scan(&expenses)
+	expenses := getUserInput("Expenses: ")
+	// fmt.Print("Expenses: ")
+	// fmt.Scan(&expenses)
 
-	fmt.Print("Tax Rate: ")
-	fmt.Scan(&taxRate)
+	taxRate := getUserInput("Tax Rate: ")
+	// fmt.Print("Tax Rate: ")
+	// fmt.Scan(&taxRate)
 
-	ebt := revenue - expenses
-	profit := ebt * (1 - taxRate/100)
-	ratio := ebt/profit
+	ebt, profit, ratio := calulateValues(revenue, expenses, taxRate)
+	// ebt := revenue - expenses
+	// profit := ebt * (1 - taxRate/100)
+	// ratio := ebt / profit
 
-	fmt.Println("Earnings Before Tax (EBT) ===>", ebt)
+	fmt.Printf("Earnings Before Tax (EBT) ===> %.2f\n", ebt)
 
-	fmt.Println("Earnings After Tax (Profit) ===>", profit)
+	fmt.Printf("Earnings After Tax (Profit) ===> %.2f\n", profit)
 
-	fmt.Println("Ratio (EBT)/Profit ===>", ratio)
+	fmt.Printf("Ratio (EBT)/Profit ===> %.2f\n", ratio)
 
 	fmt.Print("Profit Calculated successfully !")
+}
+
+func getUserInput(text string) float64 {
+	var value float64
+	fmt.Print(text)
+	fmt.Scan(&value)
+	return value
+}
+
+func calulateValues(revenue, expenses, taxRate float64) (ebt float64, profit float64, ratio float64) {
+	ebt = revenue - expenses
+	profit = ebt * (1 - taxRate/100)
+	ratio = ebt / profit
+
+	return ebt, profit, ratio
 }
