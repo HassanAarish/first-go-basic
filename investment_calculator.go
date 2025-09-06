@@ -26,6 +26,7 @@ func main() {
 	outputText("Please enter the expected return rate ==> ")
 	fmt.Scan(&expectedReturnRate)
 
+	// Returning the same values in a differet way by using return statement and creating a new function
 	futureValue, futureRealValue := calulateFutureValue(investmentAmount, expectedReturnRate, noOfYears)
 
 	// futureValue := investmentAmount * math.Pow(1+expectedReturnRate/100, noOfYears)
@@ -51,8 +52,9 @@ func outputText(value string) {
 	fmt.Print(value)
 }
 
-func calulateFutureValue(investmentAmount, expectedReturnRate, noOfYears float64) (float64, float64) {
-	fv := investmentAmount * math.Pow(1+expectedReturnRate/100, noOfYears)
-	rfv := fv / math.Pow(1+inflationRate/100, noOfYears)
+func calulateFutureValue(investmentAmount, expectedReturnRate, noOfYears float64) (fv float64, rfv float64) {
+	fv = investmentAmount * math.Pow(1+expectedReturnRate/100, noOfYears)
+	rfv = fv / math.Pow(1+inflationRate/100, noOfYears)
 	return fv, rfv
+	// return
 }
